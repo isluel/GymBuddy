@@ -130,3 +130,63 @@ ranking:post:weekly
 feed:user:{userId}
 ```
 ---
+
+## 패키지 구조 방향
+
+처음부터 서비스를 여러 개로 나누기보다는 하나의 Spring Boot 애플리케이션 안에서 도메인별로 책임을 분리하려고 합니다.
+
+```text
+com.gymbuddy
+ ├── auth
+ ├── user
+ ├── profile
+ ├── post
+ ├── image
+ ├── follow
+ ├── reaction
+ ├── comment
+ ├── feed
+ ├── notification
+ └── ranking
+```
+
+각 도메인은 대략 다음과 같은 구조를 가집니다.
+
+```text
+post
+ ├── domain
+ ├── application
+ ├── infrastructure
+ └── presentation
+```
+
+---
+
+## 기술 스택
+
+### Backend
+
+- Java
+- Spring Boot
+- Spring Security
+- gRPC
+- JPA
+- Kafka
+- Redis
+- MinIO
+- MySQL
+
+### Android
+
+- Kotlin
+- Google OAuth
+- gRPC Client
+
+### Infrastructure
+
+- Docker
+- Docker Compose
+- Kafka
+- Redis
+- MinIO
+- RDBMS
